@@ -5,3 +5,7 @@ Concatenate new word
 a string + !
 join?
 append?
+
+a string.upper()
+
+The word/sentence will be in uppercase 
