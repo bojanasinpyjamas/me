@@ -107,7 +107,16 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    starfield = []
+
+    betterstar_list = []
+    for i in range(10):
+        betterstar_list.append("*")  
+
+    for i in range(10):
+        starfield.append(betterstar_list) 
+
+    return starfield
 
 
 def loops_3():
@@ -131,8 +140,10 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+    numbersfield = []
+    numbers = (list(range(10)))
 
+    return numbersfield
 
 def loops_4():
     """Make a block of numbers that rises left to right.
@@ -151,7 +162,12 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    numberfield = []
+    numbers = str(list(range(10)))
+
+    for i in range(len(numbers)):
+        numberfield.append(numbers)
+    return numberfield
 
 
 def loops_5():
