@@ -140,10 +140,13 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    numbersfield = []
-    numbers = (list(range(10)))
-
-    return numbersfield
+    number_square = []
+    for i in range(10):
+        number_row = []
+        for j in range(10):
+            number_row.append(str(i))
+        number_square.append(number_row)
+    return number_square
 
 def loops_4():
     """Make a block of numbers that rises left to right.
@@ -163,11 +166,18 @@ def loops_4():
     ]
     """
     numberfield = []
-    numbers = str(list(range(10)))
-
-    for i in range(len(numbers)):
+    for i in range(10):
+        numbers = []
+        for j in range(10):
+            numbers.append(str(j))
         numberfield.append(numbers)
     return numberfield
+  #  numberfield = []
+    # numbers = list(range(10))
+   # for i in range(10):
+   #     numberfield.append(str(numbers))
+    
+    #return numberfield
 
 
 def loops_5():
@@ -197,8 +207,14 @@ def loops_5():
         f"There are {num_bottles} green bottles"
     you'll come to see the pros and cons of each over time.
     """
-    return None
-
+    numbaa = []
+    for i in range(10):
+        coordinatesX = []
+        for j in range(5):
+            coordinatesX.append('(i{0}, j{1})'.format(i, j))
+        numbaa.append(coordinatesX)
+    
+    return numbaa
 
 def loops_6():
     """Make a wedge of numbers.
@@ -220,8 +236,13 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
-
+    wedge = []
+    for i in range(10):
+        row = []
+        for j in range(i + 1):
+            row.append(j)
+        wedge.append(row)
+    return wedge
 
 def loops_7():
     """Make a pyramid.
@@ -244,8 +265,13 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
-
+    christmastree = []
+    for i in range(10):    
+        row = []
+        for j in range(i+1):
+            row.append(j)
+        christmastree.append(row)
+    return christmastree
 
 def little_printer(some_kind_of_list, exercise_name):
     """Help to see what's going on.
