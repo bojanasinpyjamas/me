@@ -266,19 +266,37 @@ def loops_7():
     lots of diagrams!
     """
     christmastree = []
-    for i in range(8):
-        row = []
-        for j in range(i+1):
-            row.append("*")
-        christmastree.append(row)
-    k=0
-    for element in christmastree:
-        if k % 2 == 0:
-            pass
-        else:
-            christmastree.remove(element)
-        k = k + 1
+    n = 5 
+    z = n - 1
+    x = 1
+    for i in range(n):
+        christmastree.append(' ' * z + '*' * x + ' ' * z)
+        x+=2
+        z-=1
     return christmastree
+
+    #christmastree = []
+    #height = 5
+    #stars = 1
+    #stars += 2
+    #for i in range(height):
+        #christmastree.append((' ' * (height - i)) + ('*' * stars))
+    #return christmastree
+    
+    #christmastree = []
+    #for i in range(8):
+       # row = []
+        #for j in range(i+1):
+            #row.append(" " + "*")
+        #christmastree.append(row)
+    #k=0
+    #for element in christmastree:
+        #if k % 2 == 0:
+            #pass
+        #else:
+            #christmastree.remove(element)
+       # k = k + 1
+    #return christmastree
 
 
 def little_printer(some_kind_of_list, exercise_name):
