@@ -266,12 +266,20 @@ def loops_7():
     lots of diagrams!
     """
     christmastree = []
-    for i in range(10):    
+    for i in range(8):
         row = []
         for j in range(i+1):
-            row.append(j)
+            row.append("*")
         christmastree.append(row)
+    k=0
+    for element in christmastree:
+        if k % 2 == 0:
+            pass
+        else:
+            christmastree.remove(element)
+        k = k + 1
     return christmastree
+
 
 def little_printer(some_kind_of_list, exercise_name):
     """Help to see what's going on.
