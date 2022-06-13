@@ -240,7 +240,7 @@ def loops_6():
     for i in range(10):
         row = []
         for j in range(i + 1):
-            row.append(j)
+            row.append(str(j))
         wedge.append(row)
     return wedge
 
@@ -270,7 +270,7 @@ def loops_7():
     z = n - 1
     x = 1
     for i in range(n):
-        christmastree.append(' ' * z + '*' * x + ' ' * z)
+        christmastree.append(list((' ' * z + '*' * x + ' ' * z)))
         x+=2
         z-=1
     return christmastree
