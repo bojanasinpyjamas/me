@@ -14,7 +14,6 @@ def is_odd(a_number):
     So if a_number modulo two is zero, then it's even.
     """
     the_answer = bool(a_number % 2) == 1
-    #if (a_number % 2) == 0: return(False); else: return(True) nope
     return the_answer
 
 
@@ -41,10 +40,6 @@ def fix_it(moves=True, should_move=True):
         return "WD-40"
     else: 
         return "No Problem"
-   # if moves=True and should_move=True: return "No Problem"
-   # if moves=True and should_move=False: return "Duct Tape"
-   # if moves=False and should_move=False: return "No Problem"
-   # if moves=False and should_move=True: return "WD-40"
 
 
 def loops_preview():
@@ -172,13 +167,7 @@ def loops_4():
             numbers.append(str(j))
         numberfield.append(numbers)
     return numberfield
-  #  numberfield = []
-    # numbers = list(range(10))
-   # for i in range(10):
-   #     numberfield.append(str(numbers))
-    
-    #return numberfield
-
+  
 
 def loops_5():
     """Make the coordinates of the block.
@@ -274,29 +263,6 @@ def loops_7():
         x+=2
         z-=1
     return christmastree
-
-    #christmastree = []
-    #height = 5
-    #stars = 1
-    #stars += 2
-    #for i in range(height):
-        #christmastree.append((' ' * (height - i)) + ('*' * stars))
-    #return christmastree
-    
-    #christmastree = []
-    #for i in range(8):
-       # row = []
-        #for j in range(i+1):
-            #row.append(" " + "*")
-        #christmastree.append(row)
-    #k=0
-    #for element in christmastree:
-        #if k % 2 == 0:
-            #pass
-        #else:
-            #christmastree.remove(element)
-       # k = k + 1
-    #return christmastree
 
 
 def little_printer(some_kind_of_list, exercise_name):
