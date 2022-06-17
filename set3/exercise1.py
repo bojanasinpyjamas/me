@@ -5,6 +5,7 @@ Modify each function until the tests pass.
 """
 
 
+from re import L
 from timeit import repeat
 
 
@@ -53,7 +54,7 @@ def stubborn_asker(low, high):
         if j in range (low, high):
             return j
         else:
-            pass
+            print("That is not a number in the range")
             
 
 def not_number_rejector(message):
@@ -64,13 +65,12 @@ def not_number_rejector(message):
     When you do get a number, return it.
     """
     while True:
+        user_input = input(message)
         try:
-            k = int(input(message))
-        except ValueError:
-            continue
-        else:
-            break
-    return k
+            k = int(user_input)
+            return k
+        except Exception:
+            print(f"Put in an actual number ({user_input})")
 
 
 def super_asker(low, high):
@@ -79,8 +79,16 @@ def super_asker(low, high):
     Combine what you learnt from stubborn_asker and not_number_rejector
     to make a function that does it all!
     """
-
-    return None
+    while True:
+        try:
+            m = int(input(f"Enter a number between {low} and {high}:"))
+            print(m)  
+            if m in range (low, high):
+                return m
+            else:
+                print("Try a number in the range")
+        except Exception:
+            print("Try a number") 
 
 
 if __name__ == "__main__":
