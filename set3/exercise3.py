@@ -28,7 +28,40 @@ def advancedGuessingGame():
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
     """
+    print("Number guessing game?!")
+    print("Enter a no. between _ and _")
+    lowerBound = input("Enter a lower #: ") #try again if float or string
+    upperBound = input("Enter a upper #: ") #tray again if float, string or #<lower
+    message = f"OK then, a number between {lowerBound} and {upperBound} ?"
+    print(message)
+    lowerBound = int(lowerBound)
+    upperBound = int(upperBound)
 
+    actualNumber = random.randint(lowerBound, upperBound)
+
+    while True:
+        try:
+            i = int(input(message))
+            print(i)  
+            if i in range (lowerBound, upperBound):
+                print i
+            else:
+                print("Try a number in the range")
+        except Exception:
+            print("Try a number") 
+
+    guessed = False
+
+    while not guessed:
+        guessedNumber = int(input("Guess a number: "))
+        print(f"You guessed {guessedNumber},")
+        if guessedNumber == actualNumber:
+            print(f"You got it!! It was {actualNumber}")
+            guessed = True
+        elif guessedNumber < actualNumber:
+            print("Too small, try again :'(")
+        else:
+            print("Too big, try again :'(")
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
