@@ -83,7 +83,11 @@ def wordy_pyramid():
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
     pyramid = []
-
+    for i in range(3, 20, 2):
+        row = []
+        for j in range(i):
+            row.append(j)
+        pyramid.append(row)
     return pyramid
 
 
