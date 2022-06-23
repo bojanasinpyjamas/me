@@ -5,6 +5,38 @@ Steps on the way to making your own guessing game.
 
 import random
 
+def not_number_rejector(message):
+    """Ask for a number repeatedly until actually given one.
+
+    Ask for a number, and if the response is actually NOT a number
+    (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
+    When you do get a number, return it.
+    """
+    while True:
+        user_input = input(message)
+        try:
+            k = int(user_input)
+            return k
+        except Exception:
+            print(f"Put in an actual number ({user_input})")
+
+
+def super_asker(low, high):
+    """Robust asking function.
+
+    Combine what you learnt from stubborn_asker and not_number_rejector
+    to make a function that does it all!
+    """
+    while True:
+        try:
+            m = int(input(f"Enter a number between {low} and {high}:"))
+            print(m)  
+            if m in range (low, high):
+                return m
+            else:
+                print("Try a number in the range")
+        except Exception:
+            print("Try a number")
 
 def advancedGuessingGame():
     """Play a guessing game with a user.
@@ -30,35 +62,17 @@ def advancedGuessingGame():
     """
 
     print("\nNumber guessing game?!")
-    print("Enter a no. between _ and _")
+    lowerBound = super_asker(-1000, 1000)
+    upperBound = super_asker(lowerBound + 2,1000)
+    actualNumber = random.randint(lowerBound, upperBound)
     while True:
-        try:
-            lowerBound = int(input("Enter a lower #: ")) 
-            while True:
-                try:
-                    upperBound = int(input("Enter a upper #: "))
-                    if upperBound > lowerBound:
-                        actualNumber = random.randint(lowerBound, upperBound)
-                        while True:
-                            try:
-                                guessedNumber = int(input(f"OK then, a number between {lowerBound} and {upperBound}: "))
-                                if guessedNumber in range(lowerBound, upperBound):
-                                    if guessedNumber == actualNumber:
-                                        return "You got it!"
-                                    elif guessedNumber < actualNumber:
-                                        print("Too smol, try again")
-                                    else:
-                                        print("Too big, try again")
-                                else:
-                                    print("Try a number in range")
-                            except ValueError:
-                                print("Try a number")
-                    else:
-                        print("Try a higher number")
-                except ValueError:
-                    print("Try a number")
-        except ValueError:
-            print("Try a number")        
+        guessedNumber = not_number_rejector(f"OK then, a number between {lowerBound} and {upperBound}: ")
+        if guessedNumber == actualNumber:
+            return "You got it!"
+        elif guessedNumber < actualNumber:
+            print("Too smol, try again")
+        else:
+            print("Too big, try again")
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
 if __name__ == "__main__":

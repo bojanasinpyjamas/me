@@ -22,19 +22,16 @@ def binary_search(low, high, actual_number):
     things much easier.
     """
     tries = 0
-    guess = 0
 
-    numberArray = list(range(200))
-    while low <= high:
-        mid = int(low + (high-low)/2)
-        if numberArray[mid] == actual_number:
-            guess = mid
-            tries = tries + 1
-        elif numberArray[mid] < actual_number:
+    while tries < 100:
+        mid = int(low + (high - low) / 2)
+        if mid == actual_number:
+            return {"guess": mid, "tries": tries}
+        elif mid < actual_number:
             low = mid + 1
         else:
             high = mid - 1
-    return {"guess": guess, "tries": tries}
+        tries = tries + 1
 
 
 if __name__ == "__main__":
