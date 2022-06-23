@@ -28,41 +28,39 @@ def advancedGuessingGame():
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
     """
-    print("Number guessing game?!")
+
+    print("\nNumber guessing game?!")
     print("Enter a no. between _ and _")
-    lowerBound = input("Enter a lower #: ") #try again if float or string
-    upperBound = input("Enter a upper #: ") #tray again if float, string or #<lower
-    message = f"OK then, a number between {lowerBound} and {upperBound} ?"
-    print(message)
-    lowerBound = int(lowerBound)
-    upperBound = int(upperBound)
-
-    actualNumber = random.randint(lowerBound, upperBound)
-
     while True:
         try:
-            i = int(input(message))
-            print(i)  
-            if i in range (lowerBound, upperBound):
-                print i
+            lowerBound = int(input("Enter a lower #: ")) 
+            print(lowerBound)
+        except ValueError:
+            print("Try a number")
+        try:
+            upperBound = int(input("Enter a upper #: "))
+            if upperBound > lowerBound:
+                print(upperBound)
             else:
-                print("Try a number in the range")
-        except Exception:
-            print("Try a number") 
+                print("Try a higher number")
+        except ValueError:
+            print("Try a number")
 
-    guessed = False
-
-    while not guessed:
-        guessedNumber = int(input("Guess a number: "))
-        print(f"You guessed {guessedNumber},")
-        if guessedNumber == actualNumber:
-            print(f"You got it!! It was {actualNumber}")
-            guessed = True
-        elif guessedNumber < actualNumber:
-            print("Too small, try again :'(")
-        else:
-            print("Too big, try again :'(")
-    return "You got it!"
+        try:
+            actualNumber = random.randint(lowerBound, upperBound)
+            guessedNumber = int(input(f"OK then, a number between {lowerBound} and {upperBound}: "))
+            if guessedNumber in range (lowerBound, upperBound):
+                if guessedNumber == actualNumber:
+                    return "You got it!"
+                elif guessedNumber < actualNumber:
+                    print("Too smol, try again")
+                else:
+                    print("Too big, try again")
+            else:
+                print("Try a number in range")
+        except ValueError:
+            print("Try a number")
+        
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
 
