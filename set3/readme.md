@@ -1,5 +1,6 @@
-TODO: Reflect on what you learned this week and what is still unclear.
+# TODO: Reflect on what you learned this week and what is still unclear.
 
+Sets of functions
 try and except only
 
 if, elif and else statements work together
@@ -14,6 +15,9 @@ boolean question 'in' e.g. 5 in [1, 2, 3]
 
 Open data project
 interesting dataset to question and answer, what is found and how I got there?
+Cycling maps
+School performance and environmental factors
+bushfire and soil quality analysis
 
 f-strings - calling functions and building on with previous definitions
 f"{shout(a.string)}!"
