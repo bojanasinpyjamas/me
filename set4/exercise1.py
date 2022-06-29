@@ -3,6 +3,7 @@
 
 import json
 import os
+from matplotlib.pyplot import text
 import requests
 import inspect
 import sys
@@ -82,6 +83,13 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
+    import requests
+
+    x = requests.get(
+        "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength=20"
+    )
+    print(x.text)
+
     pyramid = []
     for i in range(3, 20, 2):
         row = []
