@@ -4,6 +4,7 @@
 import json
 import os
 from matplotlib.pyplot import text
+from numpy import append
 import requests
 import inspect
 import sys
@@ -84,18 +85,18 @@ def wordy_pyramid():
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
     import requests
-    pyramid = []
+
+    wedge = []
     for i in range(3, 20, 2):
-        x = requests.get(f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={i}")
-        word = x.text
-
-    row = []
-        for j in range(i):
-            row.append(j)
-        pyramid.append(row)
-
-        pyramid.append(word)
-        return pyramid
+        url = f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={i}"
+        r = requests.get(url)
+        w = r.text
+        row = []
+        for j in range(i + 2):
+            if len(w) == j:
+                row.append(w)
+        wedge.append(row)
+    return wedge
 
 
 def pokedex(low=1, high=5):
