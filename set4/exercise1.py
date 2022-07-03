@@ -86,17 +86,18 @@ def wordy_pyramid():
     """
     import requests
 
-    wedge = []
+    wordpyramid = []
     for i in range(3, 20, 2):
         url = f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={i}"
         r = requests.get(url)
         w = r.text
-        row = []
-        for j in range(i + 2):
-            if len(w) == j:
-                row.append(w)
-        wedge.append(row)
-    return wedge
+        wordpyramid.append(w)
+    for j in range(20, 3, -2):
+        url = f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={j}"
+        r = requests.get(url)
+        w = r.text
+        wordpyramid.append(w)
+    return wordpyramid
 
 
 def pokedex(low=1, high=5):
