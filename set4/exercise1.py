@@ -2,6 +2,7 @@
 
 
 import json
+from multiprocessing.sharedctypes import Value
 import os
 from unicodedata import name
 from matplotlib.pyplot import text
@@ -123,8 +124,8 @@ def pokedex(low=1, high=5):
             Pokename = the_json["name"]
             weight = the_json["weight"]
             height = the_json["height"]
-
-    return {"name": Pokename, "weight": weight, "height": height}
+        if height is max(Value):
+            return {"name": Pokename, "weight": weight, "height": height}
 
 
 def diarist():
