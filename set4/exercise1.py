@@ -3,6 +3,7 @@
 
 import json
 import os
+from unicodedata import name
 from matplotlib.pyplot import text
 from numpy import append
 import requests
@@ -114,13 +115,16 @@ def pokedex(low=1, high=5):
          get very long. If you are accessing a thing often, assign it to a
          variable and then future access will be easier.
     """
-    id = 5
-    url = f"https://pokeapi.co/api/v2/pokemon/{id}"
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
+    for id in range(low, high):
+        url = f"https://pokeapi.co/api/v2/pokemon/{id}"
+        r = requests.get(url)
+        if r.status_code is 200:
+            the_json = json.loads(r.text)
+            Pokename = the_json["name"]
+            weight = the_json["weight"]
+            height = the_json["height"]
 
-    return {"name": None, "weight": None, "height": None}
+    return {"name": Pokename, "weight": weight, "height": height}
 
 
 def diarist():
@@ -140,6 +144,7 @@ def diarist():
 
     NOTE: this function doesn't return anything. It has the _side effect_ of modifying the file system
     """
+
     pass
 
 
