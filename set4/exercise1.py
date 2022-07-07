@@ -151,8 +151,17 @@ def diarist():
 
     NOTE: this function doesn't return anything. It has the _side effect_ of modifying the file system
     """
-
-    pass
+    file = open("set4\Trispokedovetiles(laser).gcode")
+    data = file.read()
+    i = data.count("M10 P1")
+    if i >= 1:
+        file_name = "lasers.pew"
+        filepath = os.path.join("set4", file_name)
+        f = open(filepath, "a+")
+        f.write(str(i))
+        f.close()
+    else:
+        ValueError
 
 
 if __name__ == "__main__":
