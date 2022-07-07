@@ -29,6 +29,7 @@ def wordy_pyramid():
         "https://us-central1-waldenpondpress.cloudfunctions.net/"
         "give_me_a_word?wordlength={length}"
     )
+
     pyramid_list = []
     for i in range(3, 21, 2):
         url = baseURL.format(length=i)
