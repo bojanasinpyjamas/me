@@ -161,19 +161,19 @@
   },
   {
     "of_total": 15,
-    "mark": 5,
+    "mark": 7,
     "results": [
       {
-        "value": 0,
-        "name": "exercise 1: get_a_word_of_length_n None"
-      },
-      {
-        "value": 0,
-        "name": "exercise 1: get_a_word_of_length_n None"
+        "value": 1,
+        "name": "exercise 1: get_a_word_of_length_n iambe"
       },
       {
         "value": 1,
-        "name": "exercise 1: get_a_word_of_length_n paal"
+        "name": "exercise 1: get_a_word_of_length_n macaasim"
+      },
+      {
+        "value": 1,
+        "name": "exercise 1: get_a_word_of_length_n yaya"
       },
       {
         "value": 1,
