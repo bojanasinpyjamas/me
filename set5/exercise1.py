@@ -52,14 +52,22 @@ def wordy_pyramid():
     return pyramid_list
 
 
-def get_a_word_of_length_n(length=randint):
-    url = f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
-    r = requests.get(url)
-    word = r.text
-    return word
+def get_a_word_of_length_n(length):
+    if length == randint(3, 21):
+        url = f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
+        r = requests.get(url)
+        if r.status_code is 200:
+            word = r.text
+            return word
+        else:
+            print("failed a request", r.status_code, length)
+    else:
+        ValueError
 
 
 def list_of_words_with_lengths(list_of_lengths):
+    pass
+
 
 if __name__ == "__main__":
     pyramid = wordy_pyramid()
