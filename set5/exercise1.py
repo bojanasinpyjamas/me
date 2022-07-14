@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 
+from random import randint
 import requests
 
 """REFACTORING
@@ -51,13 +52,14 @@ def wordy_pyramid():
     return pyramid_list
 
 
-def get_a_word_of_length_n(length):
-    pass
+def get_a_word_of_length_n(length=randint):
+    url = f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
+    r = requests.get(url)
+    word = r.text
+    return word
 
 
 def list_of_words_with_lengths(list_of_lengths):
-    pass
-
 
 if __name__ == "__main__":
     pyramid = wordy_pyramid()
