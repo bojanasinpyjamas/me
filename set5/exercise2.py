@@ -92,7 +92,7 @@ def abba(source="abba", guard=3):
                 and so on...
     """
 
-    def apply_rules(letter, guard):
+    def apply_rules(letter):
         """Control the substitution.
 
         You need to change these substitutions to make it work.
@@ -111,12 +111,11 @@ def abba(source="abba", guard=3):
 
     something = source.split(" ")
     result = list(map(apply_rules, something))
-    new_string = " ".join(result)
-    guard -= 1
-    if guard < 0:
+    if guard > 0:
+        new_string = " ".join(result)
         return abba(new_string, guard)
     else:
-        return new_string
+        return something
 
     # write the rest of the function here
 
