@@ -91,6 +91,7 @@ def abba(source="abba", guard=3):
     aobaobbbabbaoaaobbbaoaaobaobaobbba
                 and so on...
     """
+
     def apply_rules(letter, guard):
         """Control the substitution.
 
@@ -98,32 +99,41 @@ def abba(source="abba", guard=3):
 
         Hint: when guard == -1 return the letter.
         """
-        if letter == "a":
-            return "a"
-        elif letter == "b":
-            return "b"
-        elif letter == "o":
-            return "o"
-        else:
-            return letter
+        while guard == -1:
+            if letter == "a":
+                return "bba"
+            elif letter == "b":
+                return "aob"
+            elif letter == "o":
+                return "oa"
+            else:
+                return letter
+
+    something = source.split(" ")
+    result = list(map(apply_rules, something))
+    new_string = " ".join(result)
+    guard -= 1
+    if guard < 0:
+        return abba(new_string, guard)
+    else:
+        return new_string
 
     # write the rest of the function here
-    pass
 
 
 def koch(t, order, size):
     """Make turtle t draw a Koch fractal of 'order' and 'size'."""
     trace = ""
-    if order == 0:          # The base case is just a straight line
+    if order == 0:  # The base case is just a straight line
         t.forward(size)
     else:
-        trace += koch(t, order-1, size/3)   # Go 1/3 of the way
+        trace += koch(t, order - 1, size / 3)  # Go 1/3 of the way
         t.left(60)
-        trace += koch(t, order-1, size/3)
+        trace += koch(t, order - 1, size / 3)
         t.right(120)
-        trace += koch(t, order-1, size/3)
+        trace += koch(t, order - 1, size / 3)
         t.left(60)
-        trace += koch(t, order-1, size/3)
+        trace += koch(t, order - 1, size / 3)
     return str(order) + trace
 
 
@@ -167,7 +177,7 @@ def draw_pointy(steps=4):
     return draw_koch(drawing_method=koch, steps_deep=steps)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(draw_koch(drawing_method=square_koch, steps_deep=2))
     print(draw_koch(drawing_method=square_koch, steps_deep=3))
     print(draw_koch(drawing_method=square_koch, steps_deep=4))
