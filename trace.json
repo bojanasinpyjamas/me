@@ -161,19 +161,19 @@
   },
   {
     "of_total": 15,
-    "mark": 11,
+    "mark": 14,
     "results": [
       {
         "value": 1,
-        "name": "exercise 1: get_a_word_of_length_n yamel"
+        "name": "exercise 1: get_a_word_of_length_n ifint"
       },
       {
         "value": 1,
-        "name": "exercise 1: get_a_word_of_length_n iotacism"
+        "name": "exercise 1: get_a_word_of_length_n yardages"
       },
       {
         "value": 1,
-        "name": "exercise 1: get_a_word_of_length_n baal"
+        "name": "exercise 1: get_a_word_of_length_n yare"
       },
       {
         "value": 1,
@@ -200,15 +200,15 @@
         "name": "Exercise 1: wordy_pyramid still works"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "exercise 2: abba baaab\u21e8bbaoaaobaobaobbbaaobaobbbaaobaobbbabbaoaaob"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "exercise 2: abba b\u21e8bbaoaaob"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "exercise 2: abba roof\u21e8roabbaoabbaf"
       },
       {

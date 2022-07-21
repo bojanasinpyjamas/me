@@ -108,10 +108,10 @@ def abba(source="abba", guard=3):
         else:
             return letter
 
-    something = source.split(" ")
+    something = list(source)
     result = list(map(apply_rules, something))
+    new_string = "".join(result)
     guard -= 1
-    new_string = " ".join(result)
     if guard > 0:
         return abba(new_string, guard)
     else:
