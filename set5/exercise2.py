@@ -141,7 +141,7 @@ def draw_koch(drawing_method, steps_deep=4):
     https://docs.python.org/3/library/turtle.html
     """
     raphael = turtle.Turtle()
-    raphael.speed(1000)
+    raphael.speed(1)
     raphael.penup()
     raphael.goto(-300, 0)
     raphael.pendown()
@@ -158,10 +158,14 @@ def square_koch(t, order, size):
     Leave the turtle facing the same direction.
 
     """
-    trace = ""
+    donatello = turtle.Turtle()
+    donatello.speed(10)
+    donatello.penup()
+    donatello.goto(-300, 0)
+    donatello.pendown()
+    trace = t(donatello, order, size)
+    return trace
     # write the rest of the function here.
-    return str(order) + trace
-    pass
 
 
 def draw_square(steps=4):
