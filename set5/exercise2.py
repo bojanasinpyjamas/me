@@ -5,6 +5,7 @@ Exercises and examples to illustrate recursion.
 """
 
 
+from inspect import trace
 import turtle
 
 
@@ -158,14 +159,19 @@ def square_koch(t, order, size):
     Leave the turtle facing the same direction.
 
     """
-    donatello = turtle.Turtle()
-    donatello.speed(10)
-    donatello.penup()
-    donatello.goto(-300, 0)
-    donatello.pendown()
-    trace = t(donatello, order, size)
-    return trace
-    # write the rest of the function here.
+    trace = ""
+    if order == 0:
+        t.forward(size)
+    else:
+        trace += square_koch(t, order - 1, size / 3)
+        t.left(90)
+        trace += square_koch(t, order - 1, size / 3)
+        t.right(90)
+        trace += square_koch(t, order - 1, size / 3)
+        t.right(90)
+        trace += square_koch(t, order - 1, size / 3)
+        t.left(90)
+        trace += square_koch(t, order - 1, size / 3)
 
 
 def draw_square(steps=4):
