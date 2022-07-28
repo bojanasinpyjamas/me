@@ -178,7 +178,8 @@ def best_letter_for_pets() -> str:
     for length in len(pet_filter):
         if len(pet_filter) > len(pet_filter):
             longestlist = length
-
+    most_popular_letter = letter
+    
     return most_popular_letter
 
 
