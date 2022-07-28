@@ -54,16 +54,14 @@ def dictionary_please() -> dict:
 
 def is_it_5(some_number) -> bool:
     """Returns True if the argument passed is 5, otherwise returns False."""
-    well_is_it =
-    if some_number == int(5):
-        return True
-    else:
-        return False
+    well_is_it = some_number == 5
+    return well_is_it
 
 
 def take_five(some_number) -> int:
     """Subtracts 5 from some_number."""
-    return None
+    minusfives = some_number - int(5)
+    return minusfives
 
 
 def greet(name="Towering Timmy") -> str:
@@ -72,7 +70,8 @@ def greet(name="Towering Timmy") -> str:
     E.g. if given as "Towering Timmy" it should
          return "Well hello, Towering Timmy"
     """
-    return None
+    greeting = "Well hello, " + name
+    return greeting
 
 
 def one_counter(input_list=[1, 4, 1, 5, 1, 1]) -> int:
@@ -80,8 +79,8 @@ def one_counter(input_list=[1, 4, 1, 5, 1, 1]) -> int:
     Return an integer.
     TIP: the test will use a different input_list, so don't just return 2
     """
-    count = None
 
+    count = input_list.count(int(1))
     return count
 
 
@@ -89,8 +88,7 @@ def n_counter(search_for_this, input_list=[1, 4, 1, 5, 1, 1]) -> int:
     """Count the number of times search_for_this shows up in the input_list.
     Return an integer.
     """
-    count = None
-
+    count = input_list.count(search_for_this)
     return count
 
 
@@ -113,8 +111,15 @@ def fizz_buzz() -> List:
          'FizzBuzz', 16, 17, ...]
     """
     fizz_buzz_list = []
-    # your code here
-
+    for i in range(1, 101):
+        if i % 15 == 0:
+            fizz_buzz_list.append("FizzBuzz")
+        elif i % 5 == 0:
+            fizz_buzz_list.append("Buzz")
+        elif i % 3 == 0:
+            fizz_buzz_list.append("Fizz")
+        else:
+            fizz_buzz_list.append(int(i))
     return fizz_buzz_list
 
 
@@ -129,8 +134,10 @@ def set_it_on_fire(input_string="very naughty boy") -> str:
     TIP: consider using the 'join' method in Python.
     TIP: make sure that you have a 🔥 on both ends of the string.
     """
-
-    return None
+    fire = input_string.upper()
+    fire2 = list(fire)
+    fire2.append("🔥")
+    return fire2
 
 
 def pet_filter(letter="a") -> List:
