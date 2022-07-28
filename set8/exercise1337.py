@@ -135,9 +135,10 @@ def set_it_on_fire(input_string="very naughty boy") -> str:
     TIP: make sure that you have a 🔥 on both ends of the string.
     """
     fire = input_string.upper()
-    fire2 = list(fire)
-    fire2.append("🔥")
-    return fire2
+    llist = list(fire)
+    fireemoji = "🔥"
+    firelist = fireemoji.join(llist)
+    return fireemoji + firelist + fireemoji
 
 
 def pet_filter(letter="a") -> List:
@@ -155,7 +156,9 @@ def pet_filter(letter="a") -> List:
     ]
     # fmt: on
     filtered = []
-
+    for word in pets:
+        if letter in word:
+            filtered.append(word)
     return filtered
 
 
