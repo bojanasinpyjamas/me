@@ -178,8 +178,8 @@ def best_letter_for_pets() -> str:
     for length in len(pet_filter):
         if len(pet_filter) > len(pet_filter):
             longestlist = length
-    most_popular_letter = letter
-    
+    most_popular_letter = longestlist
+
     return most_popular_letter
 
 
@@ -210,9 +210,9 @@ def make_filler_text_dictionary() -> Dict:
     dict = {3, 4, 5, 6, 7}
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={i}"
     if i in dict:
-    r = requests.get(url)
+        r = requests.get(url)
     w = r.text
-    w2 = w.append(w)x4
+    w2 = w.append(w)
     wd = {}
 
     return w2
